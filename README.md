@@ -1,75 +1,75 @@
 # 🎮 Sims4 Mods Sorter
 
-Ce programme Python organise automatiquement les fichiers `.package` que vous téléchargez pour ajouter des éléments supplémentaires dans votre jeu Sims 4.
+This Python program automatically organizes the `.package` files you download to add extra items to your Sims 4 game.
 
-## 🎈 Pourquoi l'utiliser ?
+## 🎈 Why Use It?
 
-Si vous êtes un joueur de Sims 4, vous avez probablement téléchargé des mods pour ajouter de nouveaux objets à votre jeu. Cependant, il n'est pas toujours facile de trouver le bon emplacement pour ces fichiers. Ce programme vous aide à organiser vos mods de manière plus efficace !
+If you're a Sims 4 player, you've probably downloaded mods to add new items to your game. However, it's not always easy to find the right place for these files. This program helps you organize your mods more efficiently!
 
-## 🛠️ Prérequis
+## 🛠️ Prerequisites
 
-- Python 3.6 ou supérieur → [Télécharger Python](https://www.python.org/downloads/)
-- Pip → [Télécharger Pip](https://pip.pypa.io/en/stable/installing/)
-- Sims 4 installé sur votre ordinateur
-- Windows 10 ou supérieur
+- Python 3.6 or higher → [Download Python](https://www.python.org/downloads/)
+- Pip → [Download Pip](https://pip.pypa.io/en/stable/installing/)
+- Sims 4 installed on your computer
+- Windows 10 or higher
 
 ## 📦 Installation
 
-1. Clonez le dépôt
+1. Clone the repository
    ```bash
    git clone https://github.com/hpktz/sims4_mods_sorter
    ```
 
-2. Installez les packages requis
+2. Install the required packages
    ```bash
    pip install -r requirements.txt
    ```
 
-## 🎮 Comment l'utiliser
+## 🎮 How to Use
 
-1. Accédez au dossier de vos mods
-   Habituellement, les mods se trouvent ici :
+1. Navigate to your mods folder
+   Usually, mods are located here:
    ```bash
    cd Documents/Electronic Arts/The Sims 4/Mods/CAS
    ```
 
-2. Créez des catégories pour vos mods en créant des dossiers avec les noms des catégories (dans votre langue) que vous souhaitez utiliser.
-   **Exemple :**
+2. Create categories for your mods by creating folders with the names of the categories (in your language) you want to use.
+   **Example:**
    ```bash
-   mkdir Accessoires # Cela créera un dossier appelé Accessoires
+   mkdir Accessories # This will create a folder named Accessories
    ```
 
-3. Mettez à jour les catégories en anglais dans le fichier `main.py` en modifiant la variable `categories` à la **ligne 15** avec cette syntaxe :
+3. Update the categories in English in the `main.py` file by changing the `categories` variable on **line 15** with this syntax:
    ```python
-   categories = ['<categorie1>', '<categorie2>', '<categorie3>', ...]
+   categories = ['<category1>', '<category2>', '<category3>', ...]
    ```
 
-4. Ajoutez ensuite la traduction des catégories dans votre langue dans la variable `categories_dir` à la **ligne 17** avec cette syntaxe :
+4. Then add the translation of the categories in your language in the `categories_dir` variable on **line 17** with this syntax:
    ```python
    categories_dir = {
-       '<categorie1>': '<categorie1_in_your_langage>',
-       '<categorie2>': '<categorie2_in_your_langage>',
-       '<categorie3>': '<categorie3_in_your_langage>',
+       '<category1>': '<category1_in_your_language>',
+       '<category2>': '<category2_in_your_language>',
+       '<category3>': '<category3_in_your_language>',
        ...
    }
    ```
 
-5. (Optionnel) Si vous souhaitez vous assurer que le programme ne déplace pas les fichiers dans le mauvais dossier, vous pouvez ajouter des mots-clés associés aux catégories dans la variable `pre_filters` à la **ligne 30** avec cette syntaxe :
+5. (Optional) If you want to ensure that the program does not move the files to the wrong folder, you can add keywords associated with the categories in the `pre_filters` variable on **line 30** with this syntax:
    ```python
    pre_filters = {
-       '<categorie1>': [
+       '<category1>': [
            '<keyword1>',
            '<keyword2>',
            '<keyword3>',
            ...
        ],
-       '<categorie2>': [
+       '<category2>': [
            '<keyword1>',
            '<keyword2>',
            '<keyword3>',
            ...
        ],
-       '<categorie3>': [
+       '<category3>': [
            '<keyword1>',
            '<keyword2>',
            '<keyword3>',
@@ -79,9 +79,9 @@ Si vous êtes un joueur de Sims 4, vous avez probablement téléchargé des mods
    }
    ```
 
-6. Téléchargez vos mods dans le dossier `Downloads`.
+6. Download your mods to the `Downloads` folder.
 
-7. Exécutez le programme
+7. Run the program
    ```bash
    python main.py
    ```
